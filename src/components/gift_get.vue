@@ -6,19 +6,19 @@
     <button class="goGet" @click="GetGift">获取礼物</button>
     <br />
     <br />
-    <label>礼物名称</label>
+    <label>礼物名称:</label>
     <div>{{oneGift.name}}</div>
     <br />
-    <label>礼物价格</label>
+    <label>礼物价格:</label>
     <div >{{oneGift.price}}</div>
     <br />
-    <label>购买地址</label>
+    <label>购买地址:</label>
     <div><a :href="this.oneGift.buyUrl">{{oneGift.buyUrl}}</a></div>
     <br />
-    <label>预览图片</label>
+    <label>预览图片:</label>
     <img :src="this.oneGift.preview" style="width: 173px;vertical-align: middle;">
     <br />
-    <label>礼物备注</label>
+    <label>礼物备注:</label>
     <div>{{oneGift.message}}</div>
   </div>
 </template>
@@ -49,7 +49,6 @@
           }
         })
           .then(function (res) {
-            console.dir(res)
             let num = res.data.data.gift.length
             that.oneGift = res.data.data.gift[parseInt(num * Math.random())]
           })
@@ -63,5 +62,6 @@
     height: 21px;
     display: inline-block;
     vertical-align: middle;
+    text-align: left;
   }
 </style>
